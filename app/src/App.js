@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from './SearchBar';
 
 class App extends React.Component {
 	
@@ -12,10 +13,8 @@ class App extends React.Component {
 			  Career Catcher
 			</p>
 		  </header>
-		  {
-			//other components go here
-		  }
-		  
+
+		  <SearchBar />
 		</div>
 	  );
 	}
