@@ -1,3 +1,4 @@
+#TODO - set up gitlab runner: https://git.linux.iastate.edu/fall2020-cs319-gitprojects/g21/-/settings/ci_cd#js-runners-settings
 stages:
     - react_build 
     - auto_deploy
@@ -13,18 +14,19 @@ reactBuild:
         - npm install
         - npm build
         - echo "build successful"
-reactTest:
-    stage: react_test
-    image: node 
-    only:
-        - master
-    script:
-        - echo "testing app"
-
-# autoDeploy: 
-#     stage: auto_deploy 
+# reactTest:                          NO TESTS YET 
+#     stage: react_test
+#     image: node 
 #     only:
-#     - master
+#         - master
 #     script:
-#         - #TODO
-#         - #TODO
+#         - echo "testing app"
+
+autoDeploy: 
+    stage: auto_deploy 
+    only:
+    - master
+    script:
+        - npm install
+        - npm build 
+        - cd build/ 
