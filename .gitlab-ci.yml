@@ -4,24 +4,27 @@ stages:
     - react_test 
 
 reactBuild:
-    image: #Find docker image
+    image: node
     stage: react_build
     only:
         - master
     script:
-        - #TODO 
-        - #TODO 
+        - echo "start building app"
+        - npm install
+        - npm build
+        - echo "build successful"
 reactTest:
     stage: react_test
+    image: node 
     only:
         - master
     script:
-        - #TODO 
+        - echo "testing app"
 
-autoDeploy: 
-    stage: auto_deploy 
-    only:
-    - master
-    script:
-        - #TODO
-        - #TODO
+# autoDeploy: 
+#     stage: auto_deploy 
+#     only:
+#     - master
+#     script:
+#         - #TODO
+#         - #TODO
