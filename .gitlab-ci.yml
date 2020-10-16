@@ -14,9 +14,9 @@ reactBuild:
         - npm install
         - npm build
         - echo "build successful"
-    artifacts:
-        pahts:
-            - ./src
+    # artifacts:
+    #     pahts:
+    #         - ./src
 # reactTest:                          NO UNIT TESTS YET 
 #     stage: react_test
 #     image: node 
