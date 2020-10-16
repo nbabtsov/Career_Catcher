@@ -1,1 +1,27 @@
-# test 
+stages:
+    - react_build 
+    - auto_deploy
+    - react_test 
+
+reactBuild:
+    image: #Find docker image? 
+    stage: react_build
+    only:
+        - master
+    script:
+        - #TODO 
+        - #TODO 
+reactTest:
+    stage: react_test
+    only:
+        - master
+    script:
+        - #TODO 
+
+autoDeploy: 
+    stage: auto_deploy 
+    only:
+    - master
+    script:
+        - #TODO
+        - #TODO
