@@ -14,7 +14,10 @@ reactBuild:
         - npm install
         - npm build
         - echo "build successful"
-# reactTest:                          NO TESTS YET 
+    artifacts:
+        pahts:
+            - ./src
+# reactTest:                          NO UNIT TESTS YET 
 #     stage: react_test
 #     image: node 
 #     only:
@@ -28,5 +31,5 @@ autoDeploy:
     - master
     script:
         - npm install
-        - npm build 
+        - npm run build 
         - cd build/ 
