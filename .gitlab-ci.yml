@@ -4,7 +4,7 @@ stages:
     - react_test 
 
 reactBuild:
-    image: #Find docker image? 
+    image: #Find docker image
     stage: react_build
     only:
         - master
