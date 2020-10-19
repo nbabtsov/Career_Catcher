@@ -1,35 +1,35 @@
-#TODO - set up gitlab runner: https://git.linux.iastate.edu/fall2020-cs319-gitprojects/g21/-/settings/ci_cd#js-runners-settings
-stages:
-    - react_build 
-    - auto_deploy
-    - react_test 
+# #TODO - set up gitlab runner: https://git.linux.iastate.edu/fall2020-cs319-gitprojects/g21/-/settings/ci_cd#js-runners-settings
+# stages:
+#     - react_build 
+#     - auto_deploy
+#     - react_test 
 
-reactBuild:
-    image: node
-    stage: react_build
-    only:
-        - master
-    script:
-        - echo "start building app"
-        - npm install
-        - npm build
-        - echo "build successful"
-    # artifacts:
-    #     pahts:
-    #         - ./src
-# reactTest:                          NO UNIT TESTS YET 
-#     stage: react_test
-#     image: node 
+# reactBuild:
+#     image: node
+#     stage: react_build
 #     only:
 #         - master
 #     script:
-#         - echo "testing app"
+#         - echo "start building app"
+#         - npm install
+#         - npm build
+#         - echo "build successful"
+#     # artifacts:
+#     #     pahts:
+#     #         - ./src
+# # reactTest:                          NO UNIT TESTS YET 
+# #     stage: react_test
+# #     image: node 
+# #     only:
+# #         - master
+# #     script:
+# #         - echo "testing app"
 
-autoDeploy: 
-    stage: auto_deploy 
-    only:
-    - master
-    script:
-        - npm install
-        - npm run build 
-        - cd build/ 
+# autoDeploy: 
+#     stage: auto_deploy 
+#     only:
+#     - master
+#     script:
+#         - npm install
+#         - npm run build 
+#         - cd build/ 
