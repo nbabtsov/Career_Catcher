@@ -5,7 +5,8 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
     return (
        <div>
-          <NavLink to="/">Homepage</NavLink>
+          <NavLink to="/home">Homepage</NavLink>
+		  <NavLink to="/joblist">Joblist</NavLink>
        </div>
     );
 }

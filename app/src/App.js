@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import './App.css';
-import SearchBar from './SearchBar';
 import Navigation from './Navigation'
 import Homepage from './Homepage'
+import Joblist from './Joblist'
+import Error from './Error'
 
 class App extends React.Component {
 	
@@ -13,11 +13,13 @@ class App extends React.Component {
 				<div>
 					<Navigation />
 					<Switch>
-						<Route path="/" component={Homepage} exat />
+						<Route path="/home" component={Homepage}/>
+						<Route path="/joblist" component={Joblist}/>
+						<Route component={Error}/>
 					</Switch>
 				</div>
 			</BrowserRouter>
-		)
+		);
 	}
 }
 
