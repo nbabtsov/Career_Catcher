@@ -13,9 +13,8 @@ class App extends React.Component {
 				<div>
 					<Navigation />
 					<Switch>
-						<Route path="/home" component={Homepage}/>
 						<Route path="/joblist" component={Joblistpage}/>
-						<Route component={Error}/>
+						<Route component={Homepage}/>
 					</Switch>
 				</div>
 			</BrowserRouter>
