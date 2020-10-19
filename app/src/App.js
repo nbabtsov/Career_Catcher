@@ -1,22 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import './App.css';
 import SearchBar from './SearchBar';
+import Navigation from './Navigation'
+import Homepage from './Homepage'
 
 class App extends React.Component {
 	
 	render(){
-	  return (
-		<div className="App">
-		  <header className="App-header">
-			<p>
-			  Career Catcher
-			</p>
-		  </header>
-
-		  <SearchBar />
-		</div>
-	  );
+		return(
+			<BrowserRouter>
+				<div>
+					<Navigation />
+					<Switch>
+						<Route path="/" component={Homepage} exat />
+					</Switch>
+				</div>
+			</BrowserRouter>
+		)
 	}
 }
 
