@@ -1,5 +1,6 @@
 import React from 'react';
 import Joblist from "./Joblist";
+import './Joblist.css'
 
 class Joblistpage extends React.Component {
 	constructor(props){
@@ -28,7 +29,7 @@ class Joblistpage extends React.Component {
 				"jobGiver" : "Window Wiper Co.",
 				"location" : "Ames, IA",
 				"payment" : 9,
-				"description" : "wash and dry, latter not included"
+				"description" : "wash and dry, ladder not included"
 			},
 
 			{
@@ -47,7 +48,7 @@ class Joblistpage extends React.Component {
 	render(){
 	return(
 		<div>
-			<p> Job List </p>
+			<header className='Joblist_header'> Job List </header>
 			<Joblist jobs={this.state.jobs}/>
 		</div>
 	);
