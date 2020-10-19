@@ -1,11 +1,13 @@
 import React from 'react';
 
-const Joblist = () => {
+class Joblist extends React.Component {
+	render(){
 	return(
 		<div>
 			<p> Test </p>
 		</div>
 	);
+	}
 }
 
 export default Joblist;

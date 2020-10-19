@@ -1,9 +1,9 @@
 import React from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Navigation from './Navigation'
-import Homepage from './Homepage'
-import Joblist from './Joblist'
-import Error from './Error'
+import Navigation from './components/Navigation'
+import Homepage from './components/Homepage'
+import Joblist from './components/Joblist'
+import Error from './components/Error'
 
 class App extends React.Component {
 	
