@@ -1,22 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SearchBar from './SearchBar';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Navigation from './components/Navigation'
+import Homepage from './components/Homepage'
+import Joblistpage from './components/Joblistpage'
+import Error from './components/Error'
 
 class App extends React.Component {
 	
 	render(){
-	  return (
-		<div className="App">
-		  <header className="App-header">
-			<p>
-			  Career Catcher
-			</p>
-		  </header>
-
-		  <SearchBar />
-		</div>
-	  );
+		return(
+			<BrowserRouter>
+				<div>
+					<Navigation />
+					<Switch>
+						<Route path="/home" component={Homepage}/>
+						<Route path="/joblist" component={Joblistpage}/>
+						<Route component={Error}/>
+					</Switch>
+				</div>
+			</BrowserRouter>
+		);
 	}
 }
 
