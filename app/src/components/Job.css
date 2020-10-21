@@ -1,9 +1,23 @@
-.Job{
+.Job_Section{
     border: black;
     padding: 20px;
     border-radius: 25px;
     border-style: solid;
     width: 500px;
+    margin: auto;
     background-color: #ffffff;
+
+}
+.Job_Div{
+    /*
+
+    width: 50%;
+    padding: 10px;
+
+     */
+    background-color: #282c34;
+    margin: auto;
+    float: left;
+    width: 50%;
 
 }

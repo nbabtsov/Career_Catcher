@@ -3,8 +3,8 @@ import './Job.css'
 
 const Job = (job, index) => {
 	return(
-		<div key={index}>
-			<section  className="Job">
+		<div key={index} className="Job_Div">
+			<section   className="Job_Section">
 		 <p>{job.jobTitle}</p>
 		 <p>{job.jobGiver}</p>
 		 <p>{job.location}</p>

@@ -1,5 +1,4 @@
 .Joblist_body{
-    padding: 20px;
     background-color: #282c34;
 }
 
@@ -12,5 +11,9 @@
     justify-content: top;
     font-size: calc(42px + 2vmin);
     color: white;
+    background-color: #282c34;
+}
+
+.Joblist_div{
     background-color: #282c34;
 }
