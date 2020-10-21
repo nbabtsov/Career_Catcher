@@ -39,6 +39,41 @@ class Joblistpage extends React.Component {
 				"payment" : 11,
 				"description" : "late fee comes out of you check"
 			},
+			{
+				"jobTitle" : "Temp",
+				"jobGiver" : "Temp Co 6",
+				"location" : "Ames, IA",
+				"payment" : 18,
+				"description" : "Temp Desc"
+			},
+			{
+				"jobTitle" : "Temp",
+				"jobGiver" : "Temp Co",
+				"location" : "Ames, IA",
+				"payment" : 14,
+				"description" : "Temp Desc 2"
+			},
+			{
+				"jobTitle" : "Temp",
+				"jobGiver" : "Temp Co 2",
+				"location" : "Ames, IA",
+				"payment" : 9,
+				"description" : "Temp Desc 3"
+			},
+			{
+				"jobTitle" : "Temp",
+				"jobGiver" : "Temp Co 3",
+				"location" : "Ames, IA",
+				"payment" : 20,
+				"description" : "Temp Desc 4"
+			},
+			{
+				"jobTitle" : "Temp",
+				"jobGiver" : "Temp Co 4",
+				"location" : "Ames, IA",
+				"payment" : 17,
+				"description" : "Temp Desc 5"
+			},
 
 			
 			]
@@ -47,7 +82,7 @@ class Joblistpage extends React.Component {
 	
 	render(){
 	return(
-		<div>
+		<div className='Joblist_div'>
 			<header className='Joblist_header'> Job List </header>
 			<Joblist jobs={this.state.jobs}/>
 		</div>
