@@ -1,25 +1,15 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
-import Navigation from './components/Navigation'
-import Homepage from './components/Homepage'
-import Joblistpage from './components/Joblistpage'
-import Error from './components/Error'
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AppWithRouterAccess from './components/AppWithRouterAccess';
 
-class App extends React.Component {
-	
-	render(){
-		return(
-			<BrowserRouter>
-				<div>
-					<Navigation />
-					<Switch>
-						<Route path="/joblist" component={Joblistpage}/>
-						<Route component={Homepage}/>
-					</Switch>
-				</div>
-			</BrowserRouter>
-		);
-	}
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <AppWithRouterAccess/>
+      </Router>
+    );
+  }
 }
 
 export default App;
