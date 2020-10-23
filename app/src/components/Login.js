@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
+// import Homepage from './components/Homepage';
+
 
 export default function Login() {
     const [email, setEmail] = useState("");
@@ -11,15 +13,18 @@ export default function Login() {
         return email.length > 0 && password.length > 0;
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
+
     }
 
     return (
         <div  className="Login">
+            <header className="App-header">
+                <p>Login</p>
+            </header>
             <form onSubmit={handleSubmit}>
                 <FormGroup controlId="email" bsSize="large">
-                    {/*<ControlLabel>Email</ControlLabel>*/}
                     <FormControl
                         style={Styling}
                         placeholder='Email'
@@ -30,7 +35,6 @@ export default function Login() {
                     />
                 </FormGroup>
                 <FormGroup controlId="password" bsSize="large">
-                    {/*<ControlLabel>Password</ControlLabel>*/}
                     <FormControl
                         style={Styling}
                         placeholder="Password"
@@ -39,7 +43,7 @@ export default function Login() {
                         type="password"
                     />
                 </FormGroup>
-                <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                <Button block bsSize="large" disabled={!validateForm()} type="submit" >
                     Login
                 </Button>
             </form>
