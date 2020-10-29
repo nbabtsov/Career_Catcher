@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
-// import Homepage from './components/Homepage';
+import {userData} from "../users";
 
 
-export default function Login() {
+const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const Styling = {width:"20rem", background:"#FFFFFF", border:"none", padding:"0.5rem"};
+    let flag = false;
+
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -15,7 +17,23 @@ export default function Login() {
 
     async function handleSubmit(event) {
         event.preventDefault();
+        console.log(email);
+        console.log(password);
+        userData.map(submitHelper);
+        console.log(flag)
+        if(flag == true){
+            //do something
+            //TODO
+        }
 
+
+    }
+
+    function submitHelper(user){
+        if(user.email.localeCompare(email) == 0 && user.password.localeCompare(password) == 0){
+            console.log("correct");
+            flag = true;
+        }
     }
 
     return (
@@ -50,3 +68,5 @@ export default function Login() {
         </div>
     );
 }
+
+export default Login;
