@@ -15,7 +15,7 @@ class App extends React.Component {
 					<Switch>
 						<Route path="/joblist" component={Joblistpage}/>
 						<Route path="/Login" component={Login} />
-						<Route component={Homepage}/>
+						<Route exact path="/" component={Homepage}/>
 
 					</Switch>
 				</div>

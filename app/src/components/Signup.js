@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
-import "./Login.css";
-import Signup from "./Signup";
 
 
-export default function Login() {
+export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
     const Styling = {width:"20rem", background:"#FFFFFF", border:"none", padding:"0.5rem"};
 
     function validateForm() {
@@ -20,11 +18,21 @@ export default function Login() {
     }
 
     return (
-        <div  className="Login">
+        <div  className="Signup">
             <header className="App-header">
-                <p>Login</p>
+                <p>Sign Up</p>
             </header>
             <form onSubmit={handleSubmit}>
+                <FormGroup controlId="name" bsSize="large">
+                    <FormControl
+                        style={Styling}
+                        placeholder='Name'
+                        autoFocus
+                        type="name"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
+                </FormGroup>
                 <FormGroup controlId="email" bsSize="large">
                     <FormControl
                         style={Styling}
@@ -45,16 +53,9 @@ export default function Login() {
                     />
                 </FormGroup>
                 <Button block bsSize="large" disabled={!validateForm()} type="submit" >
-                    Login
+                    Sign Up
                 </Button>
-                <BrowserRouter>
-                    <div style={{color: "white"}}>
-                        Don't have an account?
-                        <Link to="/Signup">Sign Up</Link>
-                        <Route path="/Signup" component={Signup} />
-                    </div>
-                </BrowserRouter>
-
+                <div>Already have an account? <a href="">Login</a></div>
             </form>
         </div>
     );
