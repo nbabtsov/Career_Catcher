@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import {userData} from "../users";
 
 
 export default function SignUp() {
@@ -7,6 +8,7 @@ export default function SignUp() {
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
     const Styling = {width:"20rem", background:"#FFFFFF", border:"none", padding:"0.5rem"};
+    let flag = true;
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -14,7 +16,25 @@ export default function SignUp() {
 
     async function handleSubmit(event) {
         event.preventDefault();
+        console.log(name);
+        console.log(email);
+        console.log(password);
+        userData.map(submitHelper);
+        console.log(flag)
+        if(flag == true){
+            //add account to database
+            console.log("valid signup")
+            //TODO
 
+        }
+    }
+
+    //flag set to false if user is already in data
+    function submitHelper(user){
+        if(user.email.localeCompare(email) === 0 && user.password.localeCompare(password) === 0 && user.name.localeCompare(name) === 0){
+            console.log("Existing User Found");
+            flag = false;
+        }
     }
 
     return (
