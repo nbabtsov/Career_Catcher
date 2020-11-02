@@ -5,14 +5,10 @@ import { NavLink } from 'react-router-dom';
 const Navigation = () => {
     return (
        <div>
-           <div>
-               <NavLink to="">Homepage</NavLink>
-           </div>
-          <div>
-              <NavLink to="/joblist">Joblist</NavLink>
-          </div>
-
+           <NavLink to="">Homepage</NavLink>
+           <NavLink to="/joblist">Joblist</NavLink>
            <NavLink to="/login">Login</NavLink>
+           <NavLink to="/signup">Signup</NavLink>
        </div>
     );
 }
