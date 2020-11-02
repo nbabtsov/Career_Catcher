@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, FormControl, FormGroup} from "react-bootstrap";
+import "./Login.css";
 import {userData} from "../users";
 
 const Signup = () => {
@@ -22,17 +23,8 @@ const Signup = () => {
         userData.map(submitHelper);
         console.log(flag)
         if(flag == true){
-            //do something
+            //add account to database
             //TODO
-            userData.push({username: username, password: password, email: email});
-            var data = JSON.stringify(userData);
-            var fs = require('fs');
-            fs.writeFile("test.js", data, function(err) {
-                if (err) {
-                    console.log(err);
-                }
-            });
-            console.log("added");
 
         }
 
@@ -49,7 +41,7 @@ const Signup = () => {
 
 
         return(
-            <div>
+            <div className="Login">
                 <header className="App-header">
                     <p>Signup</p>
                 </header>

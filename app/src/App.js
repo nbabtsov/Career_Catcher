@@ -3,7 +3,6 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Homepage from './components/Homepage'
 import Joblistpage from './components/Joblistpage'
-import Error from './components/Error'
 import Login from './components/Login'
 import Signup from './components/Signup'
 
