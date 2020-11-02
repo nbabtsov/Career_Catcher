@@ -1,6 +1,6 @@
 import React from 'react';
+import SearchBar from './SearchBar';
 import './App.css';
-import KeyWordSearch from './KeyWordSearch';
 
 
 const Homepage = () => {
@@ -9,7 +9,7 @@ const Homepage = () => {
 			<header className="App-header">
 				<p>Career Catcher</p>
 			</header>
-			<KeyWordSearch />
+			<SearchBar />
 		</div>
 	)
 }
