@@ -1,4 +1,5 @@
 import React from 'react'
+/*
 import styled, { keyframes } from 'styled-components'
 
 const Header = styled.header`
@@ -101,27 +102,34 @@ const Spectrum = styled.div`
     align-items: flex-end;
     pointer-events: none;
 `
+*/
 
 const KeyWordSearch = (searchQuery, setSearchQuery) => {
     return (
-        <Bar>
-            <Spectrum aria-hidden>
-                {Array.from(Array(5)).map((_, i) => (
-                    <Contain key={i}></Contain>
-                ))}
-            </Spectrum>
-            <Header>
-                <h2>Enter Your Keyword</h2>
-            </Header>
-            <KeywordSearchBar
-                type="keyword"
-                placeholder="Type Here"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <Submit>Enter</Submit>
-        </Bar>
-    )
+        <p>temp</p>
+        /*
+    <Bar>
+        <Spectrum aria-hidden>
+            {Array.from(Array(5)).map((_, i) => (
+                <Contain key={i}></Contain>
+            ))}
+        </Spectrum>
+        <Header>
+            <h2>Enter Your Keyword</h2>
+        </Header>
+        <KeywordSearchBar
+            type="keyword"
+            placeholder="Type Here"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <Submit>Enter</Submit>
+    </Bar>
+    */
+
+)
+
+
 }
 
 export default KeyWordSearch

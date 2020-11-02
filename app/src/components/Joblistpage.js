@@ -5,6 +5,7 @@ import KeyWordSearch from './KeyWordSearch'
 import Job from './Job'
 
 
+
 class Joblistpage extends React.Component {
 	constructor(props){
 		super(props);
@@ -85,13 +86,13 @@ class Joblistpage extends React.Component {
 
 		
 	}
-	
-	
-	
+	//const [searchQuery, setSearchQuery] = useState("");
 	render(){
-		const [searchQuery, setSearchQuery] = useState("");
+
 	return(
+
 		<div>
+			{/*
 			<KeyWordSearch searchQuery={searchQuery}
 				setSearchQuery={setSearchQuery} />
 		  <div className='Joblist_div'>
@@ -106,6 +107,7 @@ class Joblistpage extends React.Component {
 			<header className='Joblist_header'> Job List </header>
 			<Joblist jobs={this.state.jobs}/>
 		  </div>
+			*/}
 		</div>
 	 );
 	}
