@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import Joblist from "./Joblist";
 import './Joblist.css'
-import KeyWordSearch from './KeyWordSearch'
-import Job from './Job'
-
 
 
 class Joblistpage extends React.Component {
@@ -18,7 +15,6 @@ class Joblistpage extends React.Component {
 				"location" : "Ames, IA",
 				"payment" : 10,
 				"description" : "Sweep floors and stuff"
-
 			},
 
 			{
@@ -83,33 +79,15 @@ class Joblistpage extends React.Component {
 			
 			]
 		};
-
-		
 	}
-	//const [searchQuery, setSearchQuery] = useState("");
+	
 	render(){
-
 	return(
-
-		<div>
-			{/*
-			<KeyWordSearch searchQuery={searchQuery}
-				setSearchQuery={setSearchQuery} />
-		  <div className='Joblist_div'>
-			  {Joblistpage.jobs
-			  	.filter((rec) => {
-					  const targetString = `${rec.jobTitle}`.toLowerCase();
-					  return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
-				  })
-			  	.map((job) => (
-				  <Job key={job.jobTitle} {...job} />
-			  ))}
+		<div className='Joblist_div'>
 			<header className='Joblist_header'> Job List </header>
 			<Joblist jobs={this.state.jobs}/>
-		  </div>
-			*/}
 		</div>
-	 );
+	);
 	}
 }
 
