@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import {BrowserRouter, Route, Switch, Link} from 'react-router-dom';
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import {BrowserRouter, Route, Link} from 'react-router-dom';
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
 import Signup from "./Signup";
 import {userData} from "../users";
@@ -26,7 +26,7 @@ const Login = () => {
 
         userData.map(submitHelper);
         console.log(flag)
-        if(flag == true){
+        if(flag === true){
             //do something
             //TODO
             setUsername(userData[temp].username);
@@ -36,14 +36,14 @@ const Login = () => {
     }
 
     function submitHelper(user, index){
-        if(user.email.localeCompare(email) == 0 && user.password.localeCompare(password) == 0){
+        if(user.email.localeCompare(email) === 0 && user.password.localeCompare(password) === 0){
             console.log("correct");
             temp = index;
             flag = true;
         }
     }
 
-    if(flag == true){
+    if(flag === true){
         return(
         <div className="Login">
             <header className="App-header">

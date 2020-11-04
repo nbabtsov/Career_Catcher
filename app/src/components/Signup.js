@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import {userData} from "../users";
 
 
@@ -21,7 +21,7 @@ export default function SignUp() {
         console.log(password);
         userData.map(submitHelper);
         console.log(flag)
-        if(flag == true){
+        if(flag === true){
             //add account to database
             console.log("valid signup")
             //TODO
