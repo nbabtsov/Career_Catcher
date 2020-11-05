@@ -76,7 +76,7 @@ export default function SignUp() {
                 <Button block bsSize="large" disabled={!validateForm()} type="submit" >
                     Sign Up
                 </Button>
-                <div>Already have an account? <a href="">Login</a></div>
+                <div className="Signup_text">Already have an account? <a href="./Login">Login</a></div>
             </form>
         </div>
     );

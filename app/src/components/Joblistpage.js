@@ -16,7 +16,7 @@ const Joblistpage = () => {
 
 	function handleKeywordChange(event){
 		setkeyword(event.target.value);
-		console.log(event.target.value);
+		//console.log(event.target.value);
 	}
 
 	if(keyword.localeCompare("jobTitleKey") == 0) {
@@ -25,7 +25,7 @@ const Joblistpage = () => {
 				<header className='Joblist_header'> Job List</header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
-				<label className='Joblist_select'> Select Keyword Search:
+				<label className='Joblist_select'> Select Keyword To Search:
 					<select value={keyword} onChange={handleKeywordChange}>
 						<option value="jobTitleKey">Job Title</option>
 						<option value="jobGiverKey">Job Giver</option>
@@ -51,7 +51,7 @@ const Joblistpage = () => {
 				<header className='Joblist_header'> Job List</header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
-				<label className='Joblist_select'> Select Keyword Search:
+				<label className='Joblist_select'> Select Keyword To Search:
 					<select value={keyword} onChange={handleKeywordChange}>
 						<option value="jobTitleKey">Job Title</option>
 						<option value="jobGiverKey">Job Giver</option>
@@ -77,7 +77,7 @@ const Joblistpage = () => {
 				<header className='Joblist_header'> Job List</header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
-				<label className='Joblist_select'> Select Keyword Search:
+				<label className='Joblist_select'> Select Keyword To Search:
 					<select value={keyword} onChange={handleKeywordChange}>
 						<option value="jobTitleKey">Job Title</option>
 						<option value="jobGiverKey">Job Giver</option>
@@ -103,7 +103,7 @@ const Joblistpage = () => {
 				<header className='Joblist_header'> Job List</header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
-				<label className='Joblist_select'> Select Keyword Search:
+				<label className='Joblist_select'> Select Keyword To Search:
 					<select value={keyword} onChange={handleKeywordChange}>
 						<option value="jobTitleKey">Job Title</option>
 						<option value="jobGiverKey">Job Giver</option>
