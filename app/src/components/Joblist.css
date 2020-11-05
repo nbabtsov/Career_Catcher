@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: top;
     font-size: calc(42px + 2vmin);
     color: white;
     background-color: #282c34;
@@ -17,6 +16,15 @@
 .Joblist_seachbar{
     align-items: center;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.Joblist_select{
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .Joblist_div{
