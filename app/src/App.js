@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Homepage from './components/Homepage'
@@ -7,24 +7,27 @@ import Login from './components/Login'
 import Signup from './components/Signup'
 
 
-class App extends React.Component {
+const App = () => {
+	const [username, setUsername] = useState("");
 
-	render(){
-		return(
-			<BrowserRouter>
-				<div>
-					<Navigation />
-					<Switch>
-						<Route path="/joblist" component={Joblistpage}/>
-						<Route path="/Login" component={Login} />
-						<Route path="/Signup" component={Signup}/>
-						<Route exact path="/" component={Homepage}/>
-
-					</Switch>
-				</div>
-			</BrowserRouter>
-		);
+	function handleUser(newValue){
+		setUsername(newValue);
 	}
+
+	return(
+		<BrowserRouter>
+			<div>
+				<Navigation username={username}/>
+				<Switch>
+					<Route path="/joblist" component={Joblistpage}/>
+					<Route path="/Login" render={(props) => (<Login username={username} handleUser={handleUser}/>)} />
+					<Route path="/Signup" component={Signup}/>
+					<Route exact path="/" component={Homepage}/>
+
+				</Switch>
+			</div>
+		</BrowserRouter>
+	);
 }
 
 export default App;

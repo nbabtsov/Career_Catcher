@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import {userData} from "../users";
+import "./Login.css"
 
 
 export default function SignUp() {
@@ -21,7 +22,7 @@ export default function SignUp() {
         console.log(password);
         userData.map(submitHelper);
         console.log(flag)
-        if(flag == true){
+        if(flag === true){
             //add account to database
             console.log("valid signup")
             //TODO
@@ -75,7 +76,7 @@ export default function SignUp() {
                 <Button block bsSize="large" disabled={!validateForm()} type="submit" >
                     Sign Up
                 </Button>
-                <div>Already have an account? <a href="">Login</a></div>
+                <div className="Signup_text">Already have an account? <a href="./Login">Login</a></div>
             </form>
         </div>
     );

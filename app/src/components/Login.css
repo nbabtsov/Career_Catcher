@@ -7,4 +7,16 @@
         margin: 0 auto;
         max-width: 320px;
     }
+
+    .Signup{
+        padding: 60px 0;
+    }
+
+    .Signup form{
+        margin: 0 auto;
+        max-width: 320px;
+    }
+    .Signup_text{
+        color: white;
+    }
 }

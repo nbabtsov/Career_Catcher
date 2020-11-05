@@ -1,5 +1,4 @@
 import React from 'react'
-/*
 import styled, { keyframes } from 'styled-components'
 
 const Header = styled.header`
@@ -9,6 +8,7 @@ const Header = styled.header`
     text-transform: uppercase;
     font-size: 0.85em;
     text-shadow: 0 3px 2px #000;
+    
 
     h2 {
         margin: 0 0 0.5em 0;
@@ -16,14 +16,13 @@ const Header = styled.header`
 `
 const Bar = styled.section`
     position: relative;
-    max-width: 100%;
-    font-size: 1.25em;
     padding: 1em 1em 2em 1em;
     background: #2b283d;
 
     @media (min-width: 800px) {
         font-size: 2.25em;
         max-width: 700px;
+        margin: auto;
     }
 `
 const color = {
@@ -102,12 +101,9 @@ const Spectrum = styled.div`
     align-items: flex-end;
     pointer-events: none;
 `
-*/
 
-const KeyWordSearch = (searchQuery, setSearchQuery) => {
+const KeyWordSearch = (props) => {
     return (
-        <p>temp</p>
-        /*
     <Bar>
         <Spectrum aria-hidden>
             {Array.from(Array(5)).map((_, i) => (
@@ -120,12 +116,12 @@ const KeyWordSearch = (searchQuery, setSearchQuery) => {
         <KeywordSearchBar
             type="keyword"
             placeholder="Type Here"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={props.searchQuery}
+            onChange={e => props.onChange(e.target.value)}
         />
-        <Submit>Enter</Submit>
+        {//<Submit>Enter</Submit>
+        }
     </Bar>
-    */
 
 )
 

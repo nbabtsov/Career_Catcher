@@ -1,94 +1,133 @@
-import React from 'react';
-import Joblist from "./Joblist";
+import React, {useState} from 'react';
 import './Joblist.css'
+import {jobs} from "./JobData";
+import KeyWordSearch from "./KeyWordSearch";
+import Job from "./Job";
 
 
-class Joblistpage extends React.Component {
-	constructor(props){
-		super(props);
-		
-		this.state ={
-			jobs: [
-			{
-				"jobTitle" : "Sweeper",
-				"jobGiver" : "Profesional Sweepers inc.",
-				"location" : "Ames, IA",
-				"payment" : 10,
-				"description" : "Sweep floors and stuff"
-			},
 
-			{
-				"jobTitle" : "Busher",
-				"jobGiver" : "Better Bushers inc.",
-				"location" : "Ames, IA",
-				"payment" : 12,
-				"description" : "Better Than Sweeping"
-			},
+const Joblistpage = () => {
+	const [searchQuery, setSearchQuery] = useState("");
+	const [keyword, setkeyword] = useState("jobTitleKey");
 
-			{
-				"jobTitle" : "Wiper",
-				"jobGiver" : "Window Wiper Co.",
-				"location" : "Ames, IA",
-				"payment" : 9,
-				"description" : "wash and dry, ladder not included"
-			},
-
-			{
-				"jobTitle" : "Deliverer",
-				"jobGiver" : "Quick Deliveries.com",
-				"location" : "Ames, IA",
-				"payment" : 11,
-				"description" : "late fee comes out of you check"
-			},
-			{
-				"jobTitle" : "Temp",
-				"jobGiver" : "Temp Co 6",
-				"location" : "Ames, IA",
-				"payment" : 18,
-				"description" : "Temp Desc"
-			},
-			{
-				"jobTitle" : "Temp",
-				"jobGiver" : "Temp Co",
-				"location" : "Ames, IA",
-				"payment" : 14,
-				"description" : "Temp Desc 2"
-			},
-			{
-				"jobTitle" : "Temp",
-				"jobGiver" : "Temp Co 2",
-				"location" : "Ames, IA",
-				"payment" : 9,
-				"description" : "Temp Desc 3"
-			},
-			{
-				"jobTitle" : "Temp",
-				"jobGiver" : "Temp Co 3",
-				"location" : "Ames, IA",
-				"payment" : 20,
-				"description" : "Temp Desc 4"
-			},
-			{
-				"jobTitle" : "Temp",
-				"jobGiver" : "Temp Co 4",
-				"location" : "Ames, IA",
-				"payment" : 17,
-				"description" : "Temp Desc 5"
-			},
-
-			
-			]
-		};
+	function handleChange(newValue){
+		setSearchQuery(newValue);
 	}
-	
-	render(){
+
+	function handleKeywordChange(event){
+		setkeyword(event.target.value);
+		//console.log(event.target.value);
+	}
+
+	if(keyword.localeCompare("jobTitleKey") == 0) {
+		return (
+			<div>
+				<header className='Joblist_header'> Job List</header>
+				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
+				<br/>
+				<label className='Joblist_select'> Select Keyword To Search:
+					<select value={keyword} onChange={handleKeywordChange}>
+						<option value="jobTitleKey">Job Title</option>
+						<option value="jobGiverKey">Job Giver</option>
+						<option value="locationKey">Job Location</option>
+						<option value="descriptionKey">Job Description</option>
+					</select>
+				</label>
+				<br/>
+				<div className='Joblist_div'>
+					{jobs.filter((rec) => {
+						const targetString = `${rec.jobTitleKey}`.toLowerCase();
+						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
+					}).map((job) => (
+						<Job key={job.jobTitleKey} {...job} />
+					))}
+				</div>
+			</div>
+		);
+	}
+	if(keyword.localeCompare("jobGiverKey") == 0) {
+		return (
+			<div>
+				<header className='Joblist_header'> Job List</header>
+				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
+				<br/>
+				<label className='Joblist_select'> Select Keyword To Search:
+					<select value={keyword} onChange={handleKeywordChange}>
+						<option value="jobTitleKey">Job Title</option>
+						<option value="jobGiverKey">Job Giver</option>
+						<option value="locationKey">Job Location</option>
+						<option value="descriptionKey">Job Description</option>
+					</select>
+				</label>
+				<br/>
+				<div className='Joblist_div'>
+					{jobs.filter((rec) => {
+						const targetString = `${rec.jobGiverKey}`.toLowerCase();
+						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
+					}).map((job) => (
+						<Job key={job.jobGiverKey} {...job} />
+					))}
+				</div>
+			</div>
+		);
+	}
+	if(keyword.localeCompare("locationKey") == 0) {
+		return (
+			<div>
+				<header className='Joblist_header'> Job List</header>
+				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
+				<br/>
+				<label className='Joblist_select'> Select Keyword To Search:
+					<select value={keyword} onChange={handleKeywordChange}>
+						<option value="jobTitleKey">Job Title</option>
+						<option value="jobGiverKey">Job Giver</option>
+						<option value="locationKey">Job Location</option>
+						<option value="descriptionKey">Job Description</option>
+					</select>
+				</label>
+				<br/>
+				<div className='Joblist_div'>
+					{jobs.filter((rec) => {
+						const targetString = `${rec.locationKey}`.toLowerCase();
+						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
+					}).map((job) => (
+						<Job key={job.locationKey} {...job} />
+					))}
+				</div>
+			</div>
+		);
+	}
+	if(keyword.localeCompare("descriptionKey") == 0) {
+		return (
+			<div>
+				<header className='Joblist_header'> Job List</header>
+				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
+				<br/>
+				<label className='Joblist_select'> Select Keyword To Search:
+					<select value={keyword} onChange={handleKeywordChange}>
+						<option value="jobTitleKey">Job Title</option>
+						<option value="jobGiverKey">Job Giver</option>
+						<option value="locationKey">Job Location</option>
+						<option value="descriptionKey">Job Description</option>
+					</select>
+				</label>
+				<br/>
+				<div className='Joblist_div'>
+					{jobs.filter((rec) => {
+						const targetString = `${rec.descriptionKey}`.toLowerCase();
+						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
+					}).map((job) => (
+						<Job key={job.descriptionKey} {...job} />
+					))}
+				</div>
+			</div>
+		);
+	}
 	return(
-		<div className='Joblist_div'>
-			<header className='Joblist_header'> Job List </header>
-			<Joblist jobs={this.state.jobs}/>
+		<div>
+
 		</div>
-	);
-	}
+	)
 }
 
 export default Joblistpage;
