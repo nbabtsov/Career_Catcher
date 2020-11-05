@@ -9,13 +9,18 @@ import Signup from './components/Signup'
 
 const App = () => {
 	const [username, setUsername] = useState("");
+
+	function handleUser(newValue){
+		setUsername(newValue);
+	}
+
 	return(
 		<BrowserRouter>
 			<div>
-				<Navigation />
+				<Navigation username={username}/>
 				<Switch>
 					<Route path="/joblist" component={Joblistpage}/>
-					<Route path="/Login" component={Login} />
+					<Route path="/Login" render={(props) => (<Login username={username} handleUser={handleUser}/>)} />
 					<Route path="/Signup" component={Signup}/>
 					<Route exact path="/" component={Homepage}/>
 
