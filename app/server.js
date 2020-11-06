@@ -19,6 +19,17 @@ con.connect(function(err) {
     con.query("SELECT * FROM USER_TABLE", function (err, result, fields) {
         if (err) throw err;
         console.log(result);
+        // con.end(function(err) {
+        //     if (err) {
+        //         return console.log(err.message);
+        //     } else{
+        //         console.log("Close connection!");
+        //     }
+        // });
+    });
+    con.query("SELECT * FROM JOB_TABLE", function (err, result, fields) {
+        if (err) throw err;
+        console.log(result);
         con.end(function(err) {
             if (err) {
                 return console.log(err.message);
