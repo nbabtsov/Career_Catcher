@@ -3,15 +3,15 @@ import styled, { keyframes } from 'styled-components'
 
 const Header = styled.header`
     position: relative;
-    color: #fff;
+    color: #2EC5F0;
     z-index: 1;
     text-transform: uppercase;
     font-size: 0.85em;
-    text-shadow: 0 3px 2px #000;
+    text-shadow: 0 4px 2px #000;
     
 
     h2 {
-        margin: 0 0 0.5em 0;
+        margin: 0px 0px 25px 100px;
     }
 `
 const Bar = styled.section`
@@ -26,11 +26,11 @@ const Bar = styled.section`
     }
 `
 const color = {
-    spectrum1: '#5e9fff',
-    spectrum2: '#5b56e8',
-    spectrum3: '#b36bff',
-    spectrum4: '#de56e8',
-    spectrum5: '#ff598a',
+    spectrum1: '#2E70E7',
+    spectrum2: '#8357D1',
+    spectrum3: '#BD4E9F',
+    spectrum4: '#DD4426',
+    spectrum5: '#CB2A14',
 }
 
 const KeywordSearchBar = styled.input`
@@ -39,9 +39,9 @@ const KeywordSearchBar = styled.input`
     line-height: 2em;
     font-size: 0.85em;
     padding: 0 0.5em;
-    width: 100%;
-    margin: 0.15em;
-    border: 1px solid black;
+    width: 95%;
+    margin: 0.1em;
+    border: 3px solid black;
     color: inherit;
     background: inherit;
     text-align: inherit;
@@ -52,7 +52,7 @@ const KeywordSearchBar = styled.input`
     }
 `
 const Submit = styled.button`
-    position: absolute;
+    position: relative;
     left: 50%;
     z-index: 1;
     overflow: hidden;
@@ -65,30 +65,24 @@ const Submit = styled.button`
     cursor: pointer;
 `
 const Contain = styled.div`
-    height: 0.5em;
-    width: 20%;
+    height: 0.75em;
+    width: 100%;
     transform-origin: bottom;
-    transition: all 1s;
 
     &:nth-child(1n) {
         background: ${color.spectrum1};
-        animation-delay: 0;
     }
     &:nth-child(2n) {
         background: ${color.spectrum2};
-        animation-delay: 50ms;
     }
     &:nth-child(3n) {
         background: ${color.spectrum3};
-        animation-delay: 100ms;
     }
     &:nth-child(4n) {
         background: ${color.spectrum4};
-        animation-delay: 150ms;
     }
     &:nth-child(5n) {
         background: ${color.spectrum5};
-        animation-delay: 200ms;
     } 
 `
 const Spectrum = styled.div`
