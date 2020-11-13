@@ -9,7 +9,8 @@ const Signup = () => {
     const [username, setUsername] = useState("");
     const Styling = {width:"20rem", background:"#FFFFFF", border:"none", padding:"0.5rem"};
     let flag = true;
-
+    var express = require('express')
+    var app = express()
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -25,7 +26,9 @@ const Signup = () => {
         if(flag == true){
             //add account to database
             //TODO
-
+            app.post('/', function (req, res) {
+                res.send('POST request to the homepage')
+            })
         }
 
 
