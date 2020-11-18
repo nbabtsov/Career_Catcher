@@ -3,7 +3,7 @@ var userData = [{name: "temp", email: "temp1@test", password: "1"}, {name: "temp
 var express = require('express');
 var router = express.Router();
 
-/* POST users listing. */
+/* Handle login requests. */
 router.post('/', function(req, res, next) {
 
   let data = req.body;
@@ -23,6 +23,7 @@ router.post('/', function(req, res, next) {
   res.send(false);
 });
 
+/*Handle Signup requests*/
 router.post('/signup', function(req, res, next){
 
   let data = req.body;
