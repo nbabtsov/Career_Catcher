@@ -9,7 +9,6 @@ const Header = styled.header`
     font-size: 0.85em;
     text-shadow: 0 4px 2px #000;
     
-
     h2 {
         margin: 0px 0px 25px 100px;
     }
@@ -114,10 +113,7 @@ const KeyWordSearch = (props) => {
             onChange={e => props.onChange(e.target.value)}
         />
     </Bar>
-
-)
-
-
+    )
 }
 
 export default KeyWordSearch

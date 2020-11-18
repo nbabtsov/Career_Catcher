@@ -6,14 +6,6 @@
   margin-top: 15vh;
 }
 
-img {
-  width: 750px;
-}
-
-.tab-buttons {
-  margin-bottom: 50px;
-}
-
 button {
   margin-right: 15px;
   font-size: 25px;
@@ -26,8 +18,17 @@ button {
   transition: all ease-in-out 0.2s;
   border-bottom: 2px solid transparent;
 }
+
+.tab-buttons {
+  margin-bottom: 50px;
+}
+
 .active {
   border-bottom: 2px solid #cb2a14;
 
   color: #2EC5F0;
+}
+
+img {
+  width: 750px;
 }
