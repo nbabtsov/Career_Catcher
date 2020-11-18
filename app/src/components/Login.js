@@ -1,55 +1,47 @@
 import React, { useState } from "react";
-import {BrowserRouter, Route, Link} from 'react-router-dom';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
-import Signup from "./Signup";
-import {userData} from "../users";
 
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const Styling = {width:"20rem", background:"#FFFFFF", border:"none", padding:"0.5rem"};
-    let flag = false;
-    let temp = 0;
-
     function validateForm() {
         return email.length > 0 && password.length > 0;
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
-        console.log(email);
-        console.log(password);
 
-        userData.map(submitHelper);
-        console.log(flag)
-        if(flag === true){
-            //do something
-            //TODO
-            //console.log(props.username);
-            //console.log(userData[temp].name);
-            props.handleUser(userData[temp].name);
+        let verify = {"email": email, "password": password}
+        console.log(verify.email);
+        console.log(verify.password);
+        let response = await fetch('http://localhost:9000/users', {method: 'POST', body: JSON.stringify(verify), headers: {'content-type': 'application/json'}});
+
+        if(response.ok){
+
+            let user = await response.text();
+            console.log(user);
+            if(user.localeCompare("false") !== 0){
+                props.handleUser(user);
+            }
+
+
+
+        }
+        else{
+            console.log("error: " + response.status);
         }
 
-
-    }
-
-    function submitHelper(user, index){
-        if(user.email.localeCompare(email) === 0 && user.password.localeCompare(password) === 0){
-            console.log("correct");
-            temp = index;
-            flag = true;
-        }
     }
 
     function logout(){
         props.handleUser("");
         console.log("logout")
-        flag = false;
     }
 
-    if(props.username.localeCompare("") !== 0){
+    if(props.username.localeCompare("") !== 0 && props.username.localeCompare("false") !== 0){
         return(
         <div className="Login">
             <header className="App-header">
