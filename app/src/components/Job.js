@@ -9,7 +9,9 @@ const Job = (job, index) => {
 			<div className="Job_Section">
 				<div className="job_Title"><p>{job.jobTitle}</p></div> 
 		<div className="job_Giver"><p>{job.jobGiver}</p></div> 
-		<div className="job_Location"><p>{job.location}</p></div>
+		<div className="job_Location"><span class="material-icons">
+place
+</span><span>{job.location}</span></div>
 		<div className="job_Payment"><p>${job.payment}</p></div> 
 		<div className="job_Description"><p>{job.description}</p></div>
 		 <Button  className="save_Job" type="button"><span>Save Job</span></Button>
