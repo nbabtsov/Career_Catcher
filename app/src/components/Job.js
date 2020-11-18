@@ -5,14 +5,18 @@ import styled from 'styled-components'
 const Job = (job, index) => {
 	return(
 		<div key={index} className="Job_Div">
-			<section   className="Job_Section">
-		<div className="job_Title"><p>{job.jobTitle}</p></div> 
+			<div className="Job_Container">
+			<div className="Job_Section">
+				<div className="job_Title"><p>{job.jobTitle}</p></div> 
 		<div className="job_Giver"><p>{job.jobGiver}</p></div> 
 		<div className="job_Location"><p>{job.location}</p></div>
 		<div className="job_Payment"><p>${job.payment}</p></div> 
 		<div className="job_Description"><p>{job.description}</p></div>
-		 <Button  type="button"><span>Save Job</span></Button>
-			</section>
+		 <Button  className="save_Job" type="button"><span>Save Job</span></Button>
+
+				</div>
+		
+			</div>
 			<br/>
 			
 		</div>
@@ -31,6 +35,7 @@ const Button = styled.button`
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, .08);
   cursor: pointer;
+  
   transition: all .25s cubic-bezier(.02, .01, .47, 1);
 	margin-left:20%;
   &:hover {
@@ -38,5 +43,6 @@ const Button = styled.button`
     transform: translate(0, -2px);
   }
 `
+
 
 export default Job;
