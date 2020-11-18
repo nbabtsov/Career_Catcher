@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 const Header = styled.header`
     position: relative;
@@ -50,19 +50,6 @@ const KeywordSearchBar = styled.input`
         outline: 2px solid #fff;
         outline-offset: 0.15em;
     }
-`
-const Submit = styled.button`
-    position: relative;
-    left: 50%;
-    z-index: 1;
-    overflow: hidden;
-    margin: 0;
-    background: transparent;
-    color: #070222;
-    background #fff;
-    font-eight: bold;
-    border: 0;
-    cursor: pointer;
 `
 const Contain = styled.div`
     height: 0.75em;

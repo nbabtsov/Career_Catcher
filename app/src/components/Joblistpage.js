@@ -19,7 +19,7 @@ const Joblistpage = () => {
 		//console.log(event.target.value);
 	}
 
-	if(keyword.localeCompare("jobTitleKey") == 0) {
+	if(keyword.localeCompare("jobTitleKey") === 0) {
 		return (
 			<div>
 				<header className='Joblist_header'> Job List</header>
@@ -45,7 +45,7 @@ const Joblistpage = () => {
 			</div>
 		);
 	}
-	if(keyword.localeCompare("jobGiverKey") == 0) {
+	if(keyword.localeCompare("jobGiverKey") === 0) {
 		return (
 			<div>
 				<header className='Joblist_header'> Job List</header>
@@ -71,7 +71,7 @@ const Joblistpage = () => {
 			</div>
 		);
 	}
-	if(keyword.localeCompare("locationKey") == 0) {
+	if(keyword.localeCompare("locationKey") === 0) {
 		return (
 			<div>
 				<header className='Joblist_header'> Job List</header>
@@ -97,7 +97,7 @@ const Joblistpage = () => {
 			</div>
 		);
 	}
-	if(keyword.localeCompare("descriptionKey") == 0) {
+	if(keyword.localeCompare("descriptionKey") === 0) {
 		return (
 			<div>
 				<header className='Joblist_header'> Job List</header>
