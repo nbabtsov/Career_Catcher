@@ -10,8 +10,10 @@ const Job = (job, index) => {
 		 <p>{job.location}</p>
 		 <p>${job.payment}</p>
 		 <p>{job.description}</p>
+		 <button className={"./Job.css.Save_Job"}>Save Job</button>
 			</section>
 			<br/>
+			
 		</div>
 	)
 }
