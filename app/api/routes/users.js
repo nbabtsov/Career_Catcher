@@ -1,7 +1,21 @@
 
-var userDatabase = [{name: "temp", email: "temp1@test", password: "1"}, {name: "temp2", email: "temp2@test", password: "2",}];
 var express = require('express');
+var db = require('./db');
 var router = express.Router();
+var userDatabase = [];
+
+db.query('Select * from USER_TABLE', function (err, result, fields) {
+  if (err) throw err;
+  console.log(result);
+  Object.keys(result).forEach(function(key) {
+    var row = result[key];
+    userDatabase.add(row);
+    console.log(row.name)
+  });
+  // userDatabase = result.toArray();
+});
+    //[{name: "temp", email: "temp1@test", password: "1"}, {name: "temp2", email: "temp2@test", password: "2",}];
+
 
 /* Handle login requests. */
 router.post('/', function(req, res, next) {
