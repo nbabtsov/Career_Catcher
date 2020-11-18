@@ -1,17 +1,22 @@
 import React from 'react';
-import SearchBar from './SearchBar';
 import './App.css';
-
+import JSTabs from './JSTabs.js'
+import styled from 'styled-components'
 
 const Homepage = () => {
 	return (
 		<div className="App">
-			<header className="App-header">
+			<Header className="App-header">
 				<p>Career Catcher</p>
-			</header>
-			<SearchBar />
+			</Header>
+			<JSTabs />
+			<img src="JobSearch.jpg" />
 		</div>
 	)
 }
+
+const Header = styled.header`
+	color: #4169E1;
+`
 
 export default Homepage;

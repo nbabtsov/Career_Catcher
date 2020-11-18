@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 const Header = styled.header`
     position: relative;
@@ -113,8 +113,6 @@ const KeyWordSearch = (props) => {
             value={props.searchQuery}
             onChange={e => props.onChange(e.target.value)}
         />
-        {//<Submit>Enter</Submit>
-        }
     </Bar>
 
 )
