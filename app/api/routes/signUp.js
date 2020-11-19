@@ -5,11 +5,17 @@ var router = express.Router();
 var userDatabase = [];
 
 /*Handle Signup requests*/
+
+
 router.post('/', function(req, res, next){
-
-
     let clientData = req.body;
+    let email = clientData.email;
+    let password = clientData.password;
+    let jobID = clientData.job;
+    let username = clientData.name;
     console.log(clientData);
+
+
     let flag = false;
     userDatabase.map(submitHelper);
     function submitHelper(user) {
@@ -18,14 +24,20 @@ router.post('/', function(req, res, next){
             flag = true;
         }
     }
-    if(flag === false) {
-        userDatabase.push(clientData);
-        res.send(userDatabase[userDatabase.length-1].username);
 
-        db.query('INSERT INTO USER_TABLE(email, password, JobID, username) VALUES(?,?,?,?)', clientData, function (err, result, fields) {
+    if(flag === false) {
+        console.log(username);
+
+        db.query('INSERT INTO USER_TABLE(email, password, JobID, username) VALUES(?,?,?,?)', [email, password, jobID, username], function (err, rows, fields) {
             if (err) throw err;
-            console.log(result);
+            else{
+                // console.log(res);
+                userDatabase.push(clientData);
+                res.send(userDatabase[userDatabase.length-1].username);
+            }
+
         });
+
     }
     else{
         res.send(false);
