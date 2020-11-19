@@ -1,9 +1,9 @@
 
 var mysql = require('mysql')
 var con = mysql.createConnection({
-    host: 'coms-319-t21.cs.iastate.edu', 
-    user: 'admin',
-    password: 'password',
+    host: 'coms-319-t21.cs.iastate.edu', //local
+    user: 'admin', //root
+    password: 'password', //whatever
     database: 'CareerCatcher'
 })
 

@@ -3,8 +3,7 @@ import './Joblist.css'
 import {jobs} from "./JobData";
 import KeyWordSearch from "./KeyWordSearch";
 import Job from "./Job";
-
-
+import styled from 'styled-components'
 
 const Joblistpage = () => {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +21,7 @@ const Joblistpage = () => {
 	if(keyword.localeCompare("jobTitleKey") === 0) {
 		return (
 			<div>
-				<header className='Joblist_header'> Job List</header>
+				<Header className='Joblist_header'> Job List</Header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
 				<label className='Joblist_select'> Select Keyword To Search:
@@ -48,7 +47,7 @@ const Joblistpage = () => {
 	if(keyword.localeCompare("jobGiverKey") === 0) {
 		return (
 			<div>
-				<header className='Joblist_header'> Job List</header>
+				<Header className='Joblist_header'> Job List</Header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
 				<label className='Joblist_select'> Select Keyword To Search:
@@ -74,7 +73,7 @@ const Joblistpage = () => {
 	if(keyword.localeCompare("locationKey") === 0) {
 		return (
 			<div>
-				<header className='Joblist_header'> Job List</header>
+				<Header className='Joblist_header'> Job List</Header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
 				<label className='Joblist_select'> Select Keyword To Search:
@@ -100,7 +99,7 @@ const Joblistpage = () => {
 	if(keyword.localeCompare("descriptionKey") === 0) {
 		return (
 			<div>
-				<header className='Joblist_header'> Job List</header>
+				<Header className='Joblist_header'> Job List</Header>
 				<KeyWordSearch searchQuery={searchQuery} onChange={handleChange} classname='Joblist_seachbar'/>
 				<br/>
 				<label className='Joblist_select'> Select Keyword To Search:
@@ -129,5 +128,9 @@ const Joblistpage = () => {
 		</div>
 	)
 }
+
+const Header = styled.header`
+	color: #4169E1;
+`
 
 export default Joblistpage;
