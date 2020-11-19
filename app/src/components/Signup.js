@@ -16,11 +16,11 @@ const Signup = (props) => {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        let verify = {"name": name,"email": email, "password": password}
+        let verify = {"email": email, "password": password, "job":1, "name": name,}
         console.log(verify.name);
         console.log(verify.email);
         console.log(verify.password);
-        let response = await fetch('http://localhost:9000/users/signup', {method: 'POST', body: JSON.stringify(verify), headers: {'content-type': 'application/json'}});
+        let response = await fetch('http://localhost:9000/signUp', {method: 'POST', body: JSON.stringify(verify), headers: {'content-type': 'application/json'}});
 
         if(response.ok){
 
