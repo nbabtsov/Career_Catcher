@@ -97,19 +97,8 @@ const JSTabs = props => {
          </div>
          </Text>
        </Tab>
-       <Tab label="Tab 4">
-         <div>
-           <p>Filler Text</p>
-         </div>
-       </Tab>
-       <Tab label="Tab 5">
-         <div>
-           <p>Filler Text</p>
-         </div>
-       </Tab>
      </Tabs>
     </div>
-    
   )
 }
 
