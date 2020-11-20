@@ -64,7 +64,7 @@ const App = () => {
 			<div>
 				<Navigation username={username}/>
 				<Switch>
-					<Route path="/joblist" component={Joblistpage}/>
+					<Route path="/joblist" render={(props) => (<Joblistpage username={username} handleUser={handleUser} />)}/>
 					<Route path="/Login" render={(props) => (<Login username={username} handleUser={handleUser}/>)} />
 					<Route path="/Signup" render={(props) => (<Signup username={username} handleUser={handleUser}/>)}/>
 					<Route exact path="/" component={Homepage}/>

@@ -4,17 +4,27 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require("cors");
-
+var session = require('express-session');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var testAPIRouter = require('./routes/testAPI');
 var signUp = require('./routes/signUp');
 var app = express();
-
+var parseurl = require('parseurl');
+var MemoryStore = require('memorystore')(session)
 // view engine setup
+
+app.use(session({
+  secret: 'g21',
+  path: '/', httpOnly: true, secure: false, maxAge: null,
+  resave: false,
+  saveUninitialized: true,
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+}))
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 app.use(logger('dev'));
 app.use(cors());
 
@@ -32,6 +42,12 @@ app.use('/signUp', signUp);
 app.use(function(req, res, next) {
   next(createError(404));
 });
+//track session
+
+
+
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

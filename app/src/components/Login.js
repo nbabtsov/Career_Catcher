@@ -22,6 +22,7 @@ const Login = (props) => {
 
             let user = await response.text();
             console.log(user);
+           // user = await (await fetch('http://localhost:9000/users/getUser', {method: 'GET'})).text();
             if(user.localeCompare("false") !== 0){
                 props.handleUser(user);
             }
@@ -45,6 +46,7 @@ const Login = (props) => {
         <div className="Login">
             <header className="App-header">
                 <p>Welcome Back {props.username}</p>
+                
                 <button onClick={logout}>Logout</button>
             </header>
         </div>
