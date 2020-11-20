@@ -13,7 +13,7 @@ const Login = (props) => {
     async function handleSubmit(event) {
         event.preventDefault();
 
-        let verify = {"email": email, "password": password}
+        let verify = {"email": email, "password": password, "job":1}
         console.log(verify.email);
         console.log(verify.password);
         let response = await fetch('http://localhost:9000/users', {method: 'POST', body: JSON.stringify(verify), headers: {'content-type': 'application/json'}});

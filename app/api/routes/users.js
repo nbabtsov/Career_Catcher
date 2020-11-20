@@ -4,6 +4,15 @@ var db = require('./db');
 var router = express.Router();
 var userDatabase = [];
 
+db.query('Select * from USER_TABLE', function (err, result, fields) {
+  if (err) throw err;
+  // console.log("db result" + JSON.stringify(result));
+  Object.keys(result).forEach(function(key) {
+    var row = result[key];
+    userDatabase.push(row);
+  });
+  // console.log("localStorage" + JSON.stringify(result));
+});
 router.post('/', function(req, res, next) {
   let clientData = req.body;
   let i;
@@ -17,6 +26,7 @@ router.post('/', function(req, res, next) {
     }
   }
   if(flag === true) {
+    console.log("here");
     db.query('Select * from USER_TABLE', function (err, result, fields) {
       if (err) throw err;
       // console.log("db result" + JSON.stringify(result));
