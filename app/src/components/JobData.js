@@ -1,4 +1,15 @@
-export const jobs = [
+export const jobs = [ //Boone, IA  Des Moines, IA  Story City, IA  Marshalltown, IA
+    {
+        "jobTitle" : "Game Developer",
+        "jobTitleKey" : "Game Developer",
+        "jobGiver" : "Bethesda",
+        "jobGiverKey" : "Bethesda",
+        "location" : "Des Moines, IA",
+        "locationKey" : "Des Moines, IA2",
+        "payment" : 52,
+        "description" : "Help us release Elder Scrolls 6",
+        "descriptionKey" : "Help us release Elder Scrolls 6"
+    },
     {
         "jobTitle" : "Sweeper",
         "jobTitleKey" : "Sweeper",
@@ -7,34 +18,31 @@ export const jobs = [
         "location" : "Ames, IA",
         "locationKey" : "Ames, IA",
         "payment" : 10,
-        "description" : "Sweep floors and stuff",
-        "descriptionKey" : "Sweep floors and stuff"
+        "description" : "Sweep floors and warehouses",
+        "descriptionKey" : "Sweep floors and warehouses"
     },
-
     {
-        "jobTitle" : "Brusher",
-        "jobTitleKey" : "Brusher",
-        "jobGiver" : "Better Brushers inc.",
-        "jobGiverKey" : "Better Brushers inc.",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA1",
-        "payment" : 12,
-        "description" : "Better Than Sweeping",
-        "descriptionKey" : "Better Than Sweeping"
+        "jobTitle" : "Data Analyst",
+        "jobTitleKey" : "Data Analyst1",
+        "jobGiver" : "Goldman Sachs",
+        "jobGiverKey" : "Goldman Sachs",
+        "location" : "Marshalltown, IA",
+        "locationKey" : "Marshalltown, IA2",
+        "payment" : 56,
+        "description" : "Interpret and log important data",
+        "descriptionKey" : "Interpret and log important data"
     },
-
     {
-        "jobTitle" : "Wiper",
-        "jobTitleKey" : "Wiper",
-        "jobGiver" : "Window Wiper Co.",
-        "jobGiverKey" : "Window Wiper Co.",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA2",
-        "payment" : 9,
-        "description" : "wash and dry, ladder not included",
-        "descriptionKey" : "wash and dry, ladder not included"
+        "jobTitle" : "Receptionist",
+        "jobTitleKey" : "Receptionist",
+        "jobGiver" : "Mountain Medical Group",
+        "jobGiverKey" : "Mountain Medical Group",
+        "location" : "Story City, IA",
+        "locationKey" : "Story City, IA3",
+        "payment" : 15,
+        "description" : "Log customer information",
+        "descriptionKey" : "Log customer information"
     },
-
     {
         "jobTitle" : "Deliverer",
         "jobTitleKey" : "Deliverer",
@@ -43,62 +51,227 @@ export const jobs = [
         "location" : "Ames, IA",
         "locationKey" : "Ames, IA3",
         "payment" : 11,
-        "description" : "late fee comes out of you check",
-        "descriptionKey" : "late fee comes out of you check"
+        "description" : "Deliver packages",
+        "descriptionKey" : "Deliver packages"
     },
     {
-        "jobTitle" : "Temp",
-        "jobTitleKey" : "Temp",
-        "jobGiver" : "Temp Co 6",
-        "jobGiverKey" : "Temp Co 6",
+        "jobTitle" : "Dog Walker",
+        "jobTitleKey" : "Dog Walker",
+        "jobGiver" : "The Dog Walkers",
+        "jobGiverKey" : "The Dog Walkers",
         "location" : "Ames, IA",
         "locationKey" : "Ames, IA4",
-        "payment" : 18,
-        "description" : "Temp Desc",
-        "descriptionKey" : "Temp Desc"
-    },
-    {
-        "jobTitle" : "Temp",
-        "jobTitleKey" : "Temp2",
-        "jobGiver" : "Temp Co",
-        "jobGiverKey" : "Temp Co",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA5",
-        "payment" : 14,
-        "description" : "Temp Desc 2",
-        "descriptionKey" : "Temp Desc 2"
-    },
-    {
-        "jobTitle" : "Temp",
-        "jobTitleKey" : "Temp3",
-        "jobGiver" : "Temp Co 2",
-        "jobGiverKey" : "Temp Co 2",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA6",
         "payment" : 9,
-        "description" : "Temp Desc 3",
-        "descriptionKey" : "Temp Desc 3"
+        "description" : "Walk dog owner's pets",
+        "descriptionKey" : "Walk dog owner's pets"
     },
     {
-        "jobTitle" : "Temp",
-        "jobTitleKey" : "Temp4",
-        "jobGiver" : "Temp Co 3",
-        "jobGiverKey" : "Temp Co 3",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA7",
-        "payment" : 20,
-        "description" : "Temp Desc 4",
-        "descriptionKey" : "Temp Desc 4"
+        "jobTitle" : "Retail Management",
+        "jobTitleKey" : "Retail Management",
+        "jobGiver" : "Costco",
+        "jobGiverKey" : "Costco",
+        "location" : "Boone, IA",
+        "locationKey" : "Boone, IA",
+        "payment" : 16,
+        "description" : "Keep store stock recorded and updated",
+        "descriptionKey" : "Keep store stock recorded and updated"
     },
     {
-        "jobTitle" : "Temp",
-        "jobTitleKey" : "Temp5",
-        "jobGiver" : "Temp Co 4",
-        "jobGiverKey" : "Temp Co 4",
-        "location" : "Ames, IA",
-        "locationKey" : "Ames, IA8",
+        "jobTitle" : "Administrative Assistant",
+        "jobTitleKey" : "Administrative Assistant",
+        "jobGiver" : "Franco's",
+        "jobGiverKey" : "Franco's",
+        "location" : "Boone, IA",
+        "locationKey" : "Boone, IA1",
+        "payment" : 18,
+        "description" : "Assist the office administrator",
+        "descriptionKey" : "Assist the office administrator"
+    },
+    {
+        "jobTitle" : "Bus Driver",
+        "jobTitleKey" : "Bus Driver",
+        "jobGiver" : "Getting You There",
+        "jobGiverKey" : "Getting You There",
+        "location" : "Boone, IA",
+        "locationKey" : "Boone, IA2",
+        "payment" : 11,
+        "description" : "Drive a bus on designated routes",
+        "descriptionKey" : "Drive a bus on designated routes"
+    },
+    {
+        "jobTitle" : "Wiper",
+        "jobTitleKey" : "Wiper1",
+        "jobGiver" : "Hank's Window Wipers",
+        "jobGiverKey" : "Hank's Window Wipers",
+        "location" : "Boone, IA",
+        "locationKey" : "Boone, IA3",
+        "payment" : 10,
+        "description" : "Clean and wipe down windows",
+        "descriptionKey" : "Clean and wipe down windows"
+    },
+    {
+        "jobTitle" : "Package Handler",
+        "jobTitleKey" : "Package Handler",
+        "jobGiver" : "UPS",
+        "jobGiverKey" : "UPS",
+        "location" : "Boone, IA",
+        "locationKey" : "Boone, IA4",
         "payment" : 17,
-        "description" : "Temp Desc 5",
-        "descriptionKey" : "Temp Desc 5"
+        "description" : "Handles packaging and delivery operations",
+        "descriptionKey" : "Handles packaging and delivery operations"
+    },
+    {
+        "jobTitle" : "Mechanic",
+        "jobTitleKey" : "Mechanic",
+        "jobGiver" : "Jiffy Lube",
+        "jobGiverKey" : "Jiffy Lube",
+        "location" : "Des Moines, IA",
+        "locationKey" : "Des Moines, IA",
+        "payment" : 22,
+        "description" : "Buff sweet exteriors",
+        "descriptionKey" : "Buff sweet exteriors"
+    },
+    {
+        "jobTitle" : "Architect",
+        "jobTitleKey" : "Architect",
+        "jobGiver" : "Gensler",
+        "jobGiverKey" : "Gensler",
+        "location" : "Des Moines, IA",
+        "locationKey" : "Des Moines, IA1",
+        "payment" : 45,
+        "description" : "Work designing building plans",
+        "descriptionKey" : "Work designing building plans"
+    },
+    {
+        "jobTitle" : "Wiper",
+        "jobTitleKey" : "Wiper",
+        "jobGiver" : "Window Wiper Co.",
+        "jobGiverKey" : "Window Wiper Co.",
+        "location" : "Ames, IA",
+        "locationKey" : "Ames, IA2",
+        "payment" : 9,
+        "description" : "Wash and dry, ladder not included",
+        "descriptionKey" : "Wash and dry, ladder not included"
+    },
+    {
+        "jobTitle" : "Programmer",
+        "jobTitleKey" : "Programmer",
+        "jobGiver" : "Google",
+        "jobGiverKey" : "Google",
+        "location" : "Des Moines, IA",
+        "locationKey" : "Des Moines, IA3",
+        "payment" : 87,
+        "description" : "Develop UI elements",
+        "descriptionKey" : "Develop UI elements"
+    },
+    {
+        "jobTitle" : "Data Analyst",
+        "jobTitleKey" : "Data Analyst",
+        "jobGiver" : "Oracle",
+        "jobGiverKey" : "Oracle",
+        "location" : "Des Moines, IA",
+        "locationKey" : "Des Moines, IA4",
+        "payment" : 61,
+        "description" : "Research and record financial data",
+        "descriptionKey" : "Research and record financial data"
+    },
+    {
+        "jobTitle" : "Chimney Sweeper",
+        "jobTitleKey" : "Chimney Sweeper",
+        "jobGiver" : "Chiminy Crickets",
+        "jobGiverKey" : "Chiminy Crickets",
+        "location" : "Story City, IA",
+        "locationKey" : "Story City, IA",
+        "payment" : 14,
+        "description" : "Clean people's chimneys",
+        "descriptionKey" : "Clean people's chimneys"
+    },
+    {
+        "jobTitle" : "Programmer",
+        "jobTitleKey" : "Programmer1",
+        "jobGiver" : "Netflix",
+        "jobGiverKey" : "Netflix",
+        "location" : "Story City, IA",
+        "locationKey" : "Story City, IA1",
+        "payment" : 49,
+        "description" : "Expand on our backend code",
+        "descriptionKey" : "Expand on our backend code"
+    },
+    {
+        "jobTitle" : "Secretary",
+        "jobTitleKey" : "Secretary",
+        "jobGiver" : "Underhill Law",
+        "jobGiverKey" : "Underhill Law",
+        "location" : "Story City, IA",
+        "locationKey" : "Story City, IA2",
+        "payment" : 19,
+        "description" : "Schedule meetings and organize agenda",
+        "descriptionKey" : "Schedule meetings and organize agenda"
+    },
+    {
+        "jobTitle" : "Game Developer",
+        "jobTitleKey" : "Game Developer1",
+        "jobGiver" : "CD Projekt Red",
+        "jobGiverKey" : "CD Projekt Red",
+        "location" : "Story City, IA",
+        "locationKey" : "Story City, IA4",
+        "payment" : 51,
+        "description" : "Code aspects of CyberPunk",
+        "descriptionKey" : "Code aspects of CyberPunk"
+    },
+    {
+        "jobTitle" : "Cashier",
+        "jobTitleKey" : "Cashier",
+        "jobGiver" : "Hyvee",
+        "jobGiverKey" : "Hyvee",
+        "location" : "Marshalltown, IA",
+        "locationKey" : "Marshalltown, IA",
+        "payment" : 11,
+        "description" : "Handle transactions and load groceries",
+        "descriptionKey" : "Handle transactions and load groceries"
+    },
+    {
+        "jobTitle" : "Mechanic",
+        "jobTitleKey" : "Mechanic1",
+        "jobGiver" : "Your Mechanic",
+        "jobGiverKey" : "Your Mechanic",
+        "location" : "Marshalltown, IA",
+        "locationKey" : "Marshalltown, IA1",
+        "payment" : 25,
+        "description" : "Work on automobile bodies and interiors",
+        "descriptionKey" : "Work on automobile bodies and interiors"
+    },
+    {
+        "jobTitle" : "Brusher",
+        "jobTitleKey" : "Brusher",
+        "jobGiver" : "Better Brushers inc.",
+        "jobGiverKey" : "Better Brushers inc.",
+        "location" : "Ames, IA",
+        "locationKey" : "Ames, IA1",
+        "payment" : 12,
+        "description" : "Brush and clean houses",
+        "descriptionKey" : "Brush and clean houses"
+    },
+    {
+        "jobTitle" : "Architect",
+        "jobTitleKey" : "Architect1",
+        "jobGiver" : "Evergreen Architects",
+        "jobGiverKey" : "Evergreen Architects",
+        "location" : "Marshalltown, IA",
+        "locationKey" : "Marshalltown, IA3",
+        "payment" : 68,
+        "description" : "Construct public ammenities",
+        "descriptionKey" : "Construct public ammenities"
+    },
+    {
+        "jobTitle" : "Bus Driver",
+        "jobTitleKey" : "Bus Driver1",
+        "jobGiver" : "Let's Ride",
+        "jobGiverKey" : "Let's Ride",
+        "location" : "Marshalltown, IA",
+        "locationKey" : "Marshalltown, IA4",
+        "payment" : 12,
+        "description" : "Operate a bus",
+        "descriptionKey" : "Operate a bus"
     },
 ];
