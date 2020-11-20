@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./Login.css";
-import styled from 'styled-components'
-
 
 const Login = (props) => {
     const [email, setEmail] = useState("");
@@ -55,9 +53,9 @@ const Login = (props) => {
     else {
         return (
             <div className="Login">
-                <Header className="App-header">
+                <header className="App-header">
                     <p>Login</p>
-                </Header>
+                </header>
                 <form onSubmit={handleSubmit}>
                     <FormGroup controlId="email" bsSize="large">
                         <FormControl
@@ -86,9 +84,5 @@ const Login = (props) => {
         );
     }
 }
-
-const Header = styled.header`
-	color: #4169E1;
-`
 
 export default Login;
