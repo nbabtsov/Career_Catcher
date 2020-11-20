@@ -19,4 +19,10 @@
     .Signup_text{
         color: white;
     }
+
+    .LoginError{
+        margin: 0 auto;
+        color: white;
+        text-align: center;
+    }
 }

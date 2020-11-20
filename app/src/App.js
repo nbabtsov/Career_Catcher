@@ -45,19 +45,17 @@ constructor(props){
 
 const App = () => {
 	const [username, setUsername] = useState("");
-	//const [apiResponse, setApiResponse] = useState("");
+	const [loginState, setLoginState] = useState("");
+	const [signupState, setSignupState] = useState("");
 	function handleUser(newValue){
 		setUsername(newValue);
 	}
-	/*
-	function callAPI(){
-		fetch('http://localhost:9000/testAPI')
-			.then(res => res.text())
-			.then(res => setState({ apiResponse: res }));
+	function handleLogin(newValue){
+		setLoginState(newValue);
 	}
-	function ComponentDidMount(){
-		callAPI();
-	}*/
+	function handleSignup(newValue){
+		setSignupState(newValue);
+	}
 
 	return(
 		<BrowserRouter>
@@ -65,16 +63,11 @@ const App = () => {
 				<Navigation username={username}/>
 				<Switch>
 					<Route path="/joblist" component={Joblistpage}/>
-					<Route path="/Login" render={(props) => (<Login username={username} handleUser={handleUser}/>)} />
-					<Route path="/Signup" render={(props) => (<Signup username={username} handleUser={handleUser}/>)}/>
+					<Route path="/Login" render={(props) => (<Login username={username} handleUser={handleUser} loginState={loginState} handleLogin={handleLogin}/>)} />
+					<Route path="/Signup" render={(props) => (<Signup username={username} handleUser={handleUser} signupState={signupState} handleSignup={handleSignup}/>)}/>
 					<Route exact path="/" component={Homepage}/>
 
 				</Switch>
-				<div>
-					{//<p className="App-intro">{apiResponse}</p>
-					}
-				</div>
-
 			</div>
 		</BrowserRouter>
 	);

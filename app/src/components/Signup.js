@@ -27,6 +27,10 @@ const Signup = (props) => {
             console.log(user);
             if(user.localeCompare("false") !== 0){
                 props.handleUser(user);
+                props.handleSignup("true");
+            }
+            else{
+                props.handleSignup("false");
             }
         }
         else{
@@ -37,6 +41,7 @@ const Signup = (props) => {
     function logout(){
         props.handleUser("");
         console.log("logout")
+        props.handleSignup("false");
     }
 
     if(props.username.localeCompare("") !== 0 && props.username.localeCompare("false") !== 0){
@@ -46,6 +51,51 @@ const Signup = (props) => {
                     <p>Welcome Back {props.username}</p>
                     <button onClick={logout}>Logout</button>
                 </header>
+            </div>
+        );
+    }
+    else if(props.signupState.localeCompare("false") === 0){
+        return (
+            <div className="Signup">
+                <header className="App-header">
+                    <p>Sign Up</p>
+                </header>
+                <form onSubmit={handleSubmit}>
+                    <FormGroup controlId="name" bsSize="large">
+                        <FormControl
+                            style={Styling}
+                            placeholder='Name'
+                            autoFocus
+                            type="name"
+                            value={name}
+                            onChange={e => setName(e.target.value)}
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="email" bsSize="large">
+                        <FormControl
+                            style={Styling}
+                            placeholder='Email'
+                            autoFocus
+                            type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="password" bsSize="large">
+                        <FormControl
+                            style={Styling}
+                            placeholder="Password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            type="password"
+                        />
+                    </FormGroup>
+                    <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                        Sign Up
+                    </Button>
+                    <div className="Signup_text">Already have an account? <a href="./Login">Login</a></div>
+                </form>
+                <p className="LoginError">Account already exists under that email</p>
             </div>
         );
     }
