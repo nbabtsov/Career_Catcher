@@ -14,14 +14,25 @@ const Job = (props) => {
 	if(props.isSaved != null) var saved = props.isSaved;
 	else var saved = false;
 	 async function saveJob() {
-		 console.log(user);
+		// console.log(user);
 		if(user !=undefined && !saved) {
-			let saveRequest = {"username": user , "jobID": 1}
+		/*	let jobInfo = {"JobTitle": jobTitle, "jobGiver":jobGiver, "location": location, "payment": payment, "description": description}
+			let jobInDB = await fetch('http://localhost:9000/users/checkJobInDB', {method: 'POST', body: JSON.stringify(jobInfo), headers: {'content-type': 'application/json'}});
+			let jobInDBresult = await jobInDB.text();
+			console.log(jobInDBresult);
+			if(jobInDBresult == "false") {
+				console.log("adding new job to db")
+				await fetch('http://localhost:9000/users/addNewJobToDataBase', {method: 'POST', body: JSON.stringify(jobInfo), headers: {'content-type': 'application/json'}});
+			} 
+			*/
+			//let saveRequest = {"username": user , "jobTitle": jobTitle, "jobGiver":jobGiver, "location": location, "payment": payment, "description": description}
+			let saveRequest = {"username": user , "JobID": 1}
 			let response = await fetch('http://localhost:9000/users/addSavedJob', {method: 'POST', body: JSON.stringify(saveRequest), headers: {'content-type': 'application/json'}});
 			if(response.ok) saved = true;
 		}
 
 	  }
+
 	return(
 		<div key={props.index} className="Job_Div">
 			<div className="Job_Container">
@@ -35,7 +46,7 @@ place
 </span><span>{location}</span></div>
 		<div className="job_Payment"><p>${payment}</p></div> 
 		<div className="job_Description"><p>{description}</p></div>
-		 <Button  className="save_Job" type="button" onClick={()=>saveJob()}><span>Save Job</span></Button>
+		 <Button  className="save_Job" type="button" saved={saved} onClick={()=>saveJob()}><span>Save Job</span></Button>
 
 				</div>
 		

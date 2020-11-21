@@ -71,22 +71,76 @@ router.post('/', function(req, res, next) {
   }
 
 });
-//TODO: "add a job to users saved jobs"
+router.post('/checkJobInDB', function(req, res, next){ 
+  let clientData = req.body;
+  let JobTitle= clientData.JobTitle;
+  let jobGiver  = clientData.jobGiver;
+  let location = clientData.location;
+  let payment = clientData.payment;
+  let description = clientData.description;
+
+  let flag = false;
+  jobDatabase.map(submitHelper);
+  function submitHelper(job) {
+    if (job.JobTitle.localeCompare(JobTitle) === 0 && job.jobGiver.localeCompare(jobGiver) === 0 && job.location.localeCompare(location) === 0 && job.payment.localeCompare(payment) === 0 && job.description.localeCompare(description) === 0) {
+      console.log("job in database already");
+      flag = true;
+      
+    }
+    if(flag == false) {
+      console.log("job not in database (1)");
+      res.send("false"); }
+    else res.send(true);
+  }
+
+});
+//"add to a users saved jobs"
 router.post('/addSavedJob', function(req, res, next){ 
+  
+  /*let clientData = req.body;
+  let user = clientData.username;
+  let JobTitle= clientData.JobTitle;
+  let jobGiver  = clientData.jobGiver;
+  let location = clientData.location;
+  let payment = clientData.payment;
+  let description = clientData.description;*/
   let clientData = req.body;
   let user = clientData.username;
   let JobID= clientData.JobID;
-  db.
-  db.query('INSERT INTO SAVE_TABLE(user, SavedJobID) VALUES(?,?)', [user, JobID], function (err, rows, fields) {
+ /* saveDatabase.map(getJobID);
+  function getJobID(job) {
+    if (job.JobTitle.localeCompare(JobTitle) === 0 && job.jobGiver.localeCompare(jobGiver) === 0 && job.location.localeCompare(location) === 0 && job.payment.localeCompare(payment) === 0 && job.description.localeCompare(description) === 0) {
+      JobID = job.JobID;
+    }
+    else console.log("job not in database");
+  }
+*/
+  let flag = false;
+  saveDatabase.map(submitHelper);
+  function submitHelper(save) {
+    if (save.user.localeCompare(user) === 0 && save.jobID.localeCompare(JobID)===0) {
+      console.log("save is already in database");
+      flag = true;
+    }
+  }
+
+  if(flag === false) {
+    console.log(JobID + user);
+  db.query('INSERT INTO SAVE_TABLE(SaveID, user, SavedJobID) VALUES(?,?,?)', [saveDatabase.length+1, user, JobID], function (err, rows, fields) {
     if (err) throw err;
     else{
       saveDatabase.push(clientData);
       res.send(saveDatabase[saveDatabase.length-1].username);
       res.send(saveDatabase[saveDatabase.length-1].jobID);
+      
 
     }
 
   });
+  }
+  else{
+    res.send(false);
+  }
 
 });
 //TODO add function to add any job not in databse to database on "Save"
@@ -103,22 +157,23 @@ router.post('/addNewJobToDataBase', function(req, res, next){
 
 
   let flag = false;
-  userDatabase.map(submitHelper);
-  function submitHelper(user) {
-    if (user.email.localeCompare(clientData.email) === 0) {
-      console.log("correct");
+  jobDatabase.map(submitHelper);
+  function submitHelper(job) {
+    if (job.JobTitle.localeCompare(JobTitle) === 0) {
+      console.log("job is already in database (2)");
       flag = true;
     }
   }
 
   if(flag === false) {
-    console.log(username);
+    console.log(jobTitle);
 
-    db.query('INSERT INTO USER_TABLE(email, password, JobID, username) VALUES(?,?,?,?)', [email, password, jobID, username], function (err, rows, fields) {
+    db.query('INSERT INTO JOB_TABLE(ID, JobTitle , jobGiver, location, payment, description) VALUES(?,?,?,?,?,?)', [jobTable.length, JobTitle , jobGiver, location, payment, description], function (err, rows, fields) {
       if (err) throw err;
       else{
-        userDatabase.push(clientData);
-        res.send(userDatabase[userDatabase.length-1].username);
+        console.log("adding job !")
+        jobDatabase.push(clientData);
+        res.send(jobDatabase[jobDatabase.length-1].job);
       }
 
     });
