@@ -92,7 +92,7 @@ const JSTabs = props => {
          <Text>
          <div>
            <p>Please feel free to contact us with any questions or concerns at 
-             shibbir@iastate.edu and we look foward to hearing from you!
+             kjriggs@iastate.edu and we look foward to hearing from you!
            </p>
          </div>
          </Text>
