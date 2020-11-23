@@ -45,19 +45,17 @@ constructor(props){
 
 const App = () => {
 	const [username, setUsername] = useState("");
-	//const [apiResponse, setApiResponse] = useState("");
+	const [loginState, setLoginState] = useState("");
+	const [signupState, setSignupState] = useState("");
 	function handleUser(newValue){
 		setUsername(newValue);
 	}
-	/*
-	function callAPI(){
-		fetch('http://localhost:9000/testAPI')
-			.then(res => res.text())
-			.then(res => setState({ apiResponse: res }));
+	function handleLogin(newValue){
+		setLoginState(newValue);
 	}
-	function ComponentDidMount(){
-		callAPI();
-	}*/
+	function handleSignup(newValue){
+		setSignupState(newValue);
+	}
 
 	return(
 		<BrowserRouter>
@@ -70,11 +68,6 @@ const App = () => {
 					<Route exact path="/" component={Homepage}/>
 
 				</Switch>
-				<div>
-					{//<p className="App-intro">{apiResponse}</p>
-					}
-				</div>
-
 			</div>
 		</BrowserRouter>
 	);

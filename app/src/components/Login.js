@@ -25,7 +25,12 @@ const Login = (props) => {
            // user = await (await fetch('http://localhost:9000/users/getUser', {method: 'GET'})).text();
             if(user.localeCompare("false") !== 0){
                 props.handleUser(user);
+                props.handleLogin("true");
             }
+            else{
+                props.handleLogin("false");
+            }
+
 
 
 
@@ -38,6 +43,7 @@ const Login = (props) => {
 
     function logout(){
         props.handleUser("");
+        props.handleLogin("");
         console.log("logout")
     }
 
@@ -50,6 +56,40 @@ const Login = (props) => {
                 <button onClick={logout}>Logout</button>
             </header>
         </div>
+        );
+    }
+    else if(props.loginState.localeCompare("false") === 0){
+        return (
+            <div className="Login">
+                <header className="App-header">
+                    <p>Login</p>
+                </header>
+                <form onSubmit={handleSubmit}>
+                    <FormGroup controlId="email" bsSize="large">
+                        <FormControl
+                            style={Styling}
+                            placeholder='Email'
+                            autoFocus
+                            type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="password" bsSize="large">
+                        <FormControl
+                            style={Styling}
+                            placeholder="Password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            type="password"
+                        />
+                    </FormGroup>
+                    <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                        Login
+                    </Button>
+                </form>
+                <p className="LoginError">Incorrect Password/email, Try again</p>
+            </div>
         );
     }
     else {
