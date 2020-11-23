@@ -1,22 +1,52 @@
 import React from 'react';
 import './Job.css'
 import styled from 'styled-components'
+import { getBsProps } from 'react-bootstrap/lib/utils/bootstrapUtils';
 
-const Job = (job, index) => {
+const Job = (props) => {
+	const jobTitle = props.jobTitle;
+	const location = props.location;
+	const payment = props.payment;
+	const description = props.description;
+	const jobGiver = props.jobGiver;
+	const user = props.user
+	
+	if(props.isSaved != null) var saved = props.isSaved;
+	else var saved = false;
+	 async function saveJob() {
+		// console.log(user);
+		if(user !=undefined && !saved) {
+		/*	let jobInfo = {"JobTitle": jobTitle, "jobGiver":jobGiver, "location": location, "payment": payment, "description": description}
+			let jobInDB = await fetch('http://localhost:9000/users/checkJobInDB', {method: 'POST', body: JSON.stringify(jobInfo), headers: {'content-type': 'application/json'}});
+			let jobInDBresult = await jobInDB.text();
+			console.log(jobInDBresult);
+			if(jobInDBresult == "false") {
+				console.log("adding new job to db")
+				await fetch('http://localhost:9000/users/addNewJobToDataBase', {method: 'POST', body: JSON.stringify(jobInfo), headers: {'content-type': 'application/json'}});
+			} 
+			*/
+			//let saveRequest = {"username": user , "jobTitle": jobTitle, "jobGiver":jobGiver, "location": location, "payment": payment, "description": description}
+			let saveRequest = {"username": user , "JobID": 1}
+			let response = await fetch('http://localhost:9000/users/addSavedJob', {method: 'POST', body: JSON.stringify(saveRequest), headers: {'content-type': 'application/json'}});
+			if(response.ok) saved = true;
+		}
+
+	  }
+
 	return(
-		<div key={index} className="Job_Div">
+		<div key={props.index} className="Job_Div">
 			<div className="Job_Container">
 			<div className="Job_Section">
-				<div className="job_Title"><p>{job.jobTitle}</p></div> 
-		<div className="job_Giver"><span class="material-icons">
+	<div className="job_Title"><p>{jobTitle} </p></div> 
+		<div className="job_Giver"><span className="material-icons">
 business_center
-</span><span>{job.jobGiver}</span></div> 
-		<div className="job_Location"><span class="material-icons">
+</span><span>{jobGiver}</span></div> 
+		<div className="job_Location"><span className="material-icons">
 place
-</span><span>{job.location}</span></div>
-		<div className="job_Payment"><p>${job.payment}</p></div> 
-		<div className="job_Description"><p>{job.description}</p></div>
-		 <Button  className="save_Job" type="button"><span>Save Job</span></Button>
+</span><span>{location}</span></div>
+		<div className="job_Payment"><p>${payment}</p></div> 
+		<div className="job_Description"><p>{description}</p></div>
+		 <Button  className="save_Job" type="button" saved={saved} onClick={()=>saveJob()}><span>Save Job</span></Button>
 
 				</div>
 		

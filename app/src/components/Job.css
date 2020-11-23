@@ -105,7 +105,33 @@
       box-shadow: 0 15px 15px rgba(0, 0, 0, .16);
       transform: translate(0, -2px);
     }
-  
+    .save_Job:saved {
+        opacity: 0;
+        display: block;
+        width: 60%;
+        padding: 12px 0;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        color: #fff;
+        background-color: green;
+        border: 0;
+        border-radius: 35px;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, .08);
+        cursor: pointer;
+        
+        transition: all .25s cubic-bezier(.02, .01, .47, 1);
+            margin-top: 180px;
+          margin-left:20%;
+          margin-right: 20%;
+          margin-bottom: 15px;
+    }
+        .save_Job:hover {
+          box-shadow: 0 15px 15px rgba(0, 0, 0, .16);
+          transform: translate(0, -2px);
+        }
+      
+    
 
       
 

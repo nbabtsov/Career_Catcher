@@ -4,8 +4,10 @@ import {jobs} from "./JobData";
 import KeyWordSearch from "./KeyWordSearch";
 import Job from "./Job";
 import styled from 'styled-components'
+import { getBsProps } from 'react-bootstrap/lib/utils/bootstrapUtils';
 
-const Joblistpage = () => {
+const Joblistpage = (props) => {
+	
 	const [searchQuery, setSearchQuery] = useState("");
 	const [keyword, setkeyword] = useState("jobTitleKey");
 
@@ -37,8 +39,8 @@ const Joblistpage = () => {
 					{jobs.filter((rec) => {
 						const targetString = `${rec.jobTitleKey}`.toLowerCase();
 						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
-					}).map((job) => (
-						<Job key={job.jobTitleKey} {...job} />
+					}).map((job ) => (
+						<Job  key={job.jobTitleKey}  description={job.description} jobTitle={job.jobTitle}  jobGiver={job.jobGiver} location={job.location} payment={job.payment} isSaved={false} user={props.username}/>
 					))}
 				</div>
 			</div>
@@ -64,7 +66,7 @@ const Joblistpage = () => {
 						const targetString = `${rec.jobGiverKey}`.toLowerCase();
 						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
 					}).map((job) => (
-						<Job key={job.jobGiverKey} {...job} />
+						<Job user={props.username} isSaved={false} key={job.jobGiverKey} {...job} />
 					))}
 				</div>
 			</div>
@@ -90,7 +92,7 @@ const Joblistpage = () => {
 						const targetString = `${rec.locationKey}`.toLowerCase();
 						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
 					}).map((job) => (
-						<Job key={job.locationKey} {...job} />
+						<Job user={props.username} key={job.locationKey} {...job} />
 					))}
 				</div>
 			</div>
@@ -116,7 +118,7 @@ const Joblistpage = () => {
 						const targetString = `${rec.descriptionKey}`.toLowerCase();
 						return searchQuery.length === 0 ? true : targetString.includes(searchQuery.toLowerCase());
 					}).map((job) => (
-						<Job key={job.descriptionKey} {...job} />
+						<Job user={props.username} key={job.descriptionKey} {...job} />
 					))}
 				</div>
 			</div>

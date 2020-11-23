@@ -33,7 +33,9 @@ router.post('/', function(req, res, next){
             else{
                 // console.log(res);
                 userDatabase.push(clientData);
+                req.session.user = userDatabase[userDatabase.length-1].username;
                 res.send(userDatabase[userDatabase.length-1].username);
+               
             }
 
         });
